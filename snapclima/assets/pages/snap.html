@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/snap.css">
+    <title>SnapClima</title>
+</head>
+<body>
+
+    <header class="content">
+        <div class="city-search-bar">
+            <input class="search-bar" type="text" placeholder="Temperatura de qual cidade?">
+            <button class="button-search-bar"> 
+                <img class="search-icon" src="../imgs/search-icon.png" alt="icone lupa">
+            </button>
+        </div>
+        <div class="current-date">Hoje, 26 de setembro</div>
+        <div class="city-name">São Paulo</div>
+    </header>
+
+    <section class="current-temperature">
+        <img class="weather-icon" src="../imgs/loading-icon.svg" alt="tempo">
+        <div class="current-temperature-description">Nublado</div>
+        <div class="current-temperature-info-label">Tempo Agora</div>
+        <div class="current-temperature-info">24°C</div>
+    </section>
+
+    <div class="bottom-container">
+
+        <section class="info-temperature">
+
+            <div class="temperature-details-item">
+                <div class="temperature-details-label">Vento</div>
+                <div class="temperature-details-value">19km</div>
+            </div>
+
+            <div class="temperature-details-item">
+                <div class="temperature-details-label">Sensação</div>
+                <div class="temperature-details-value">25°C</div>
+            </div>
+
+            <div class="temperature-details-item">
+                <div class="temperature-details-label">Umidade</div>
+                <div class="temperature-details-value">84%</div>
+            </div>
+        </section>
+
+        <section class="sunset-sunrise">
+            <div class="sunset-sunrise-item">
+                <img class="sunset-sunrise-icon" src="../imgs/sunrise-icon.png" alt="nascer do sol">
+                <div class="sunset-sunrise-value">5:39</div>
+            </div>
+
+            <div class="sunset-sunrise-item">
+                <img class="sunset-sunrise-icon" src="../imgs/sunset-icon.png" alt="por do sol">
+                <div class="sunset-sunrise-value">18:57</div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="../script/snap.js"></script>
+</body>
+</html>
