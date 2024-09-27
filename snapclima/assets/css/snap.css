@@ -23,7 +23,6 @@ body {
     justify-content: center;
     margin-top: 30px;
     align-items: center;
-    
 }
 
 .search-bar {
@@ -45,7 +44,6 @@ body {
 }
 
 .button-search-bar {
-
     cursor: pointer;
     transition: 0.2s;
     min-width: 50px;
@@ -119,7 +117,8 @@ body {
 
 .bottom-container {
     background-color: #fff;
-    position: absolute;
+    position: fixed;
+    left: 0;
     bottom: 0px;
     width: 100%;
     border-radius: 25px 25px 0 0;
@@ -137,7 +136,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right: 1px solid #a2a2be;
+    /*border-right: 1px solid #a2a2be;*/
 }
 
 .temperature-details-item:last-child {
