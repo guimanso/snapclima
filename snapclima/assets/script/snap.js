@@ -52,8 +52,6 @@ function getCityWeather(cityName) {
         .then((data) => displayWeather(data))
 }
 
-
-
 function displayWeather(data) {
     let {
         dt,
@@ -63,8 +61,6 @@ function displayWeather(data) {
         wind: { speed },
         sys: { sunrise, sunset },
     } = data
-
-    console.log(speed)
 
     currentDate.textContent = formatDate(dt); // textContent != "innerHTML"
     cityName.textContent = name;
