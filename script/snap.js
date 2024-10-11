@@ -65,7 +65,7 @@ function displayWeather(data) {
     currentDate.textContent = formatDate(dt); // textContent != "innerHTML"
     cityName.textContent = name;
 
-    weatherIcon.src = `../imgs/${icon}.svg`
+    weatherIcon.src = `../assets/imgs/${icon}.svg`
     weatherDescription.textContent = description;
     currentTemperature.textContent = `${Math.round(temp)}°C`;
     windSpeed.textContent = `${Math.round(speed * 3.6)}km/h`;
