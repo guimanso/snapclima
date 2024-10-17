@@ -28,7 +28,9 @@ navigator.geolocation.getCurrentPosition(
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
 
-        getCurrentLocationWeather(lat, lon)
+        getCurrentLocationWeather(lat, lon);
+
+        alert('[ATENÇÃO]: A localização em tempo real pode ser imprecisa. Você pode buscar por uma localização na barra de busca. ');
     }, 
     (err) => {
          if (err === 1) {
