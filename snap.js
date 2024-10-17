@@ -14,7 +14,7 @@ const currentHumidity = document.getElementById('current-humidity');
 const sunriseTime = document.getElementById('sunrise-time');
 const sunsetTime = document.getElementById('sunset-time');
 
-const api_key = "bb232fa4e7dbca936eea6aeb21ee9765";
+const api_keyWeather = "bb232fa4e7dbca936eea6aeb21ee9765";
 
 //`https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`
 
@@ -25,29 +25,36 @@ citySearchButton.addEventListener('click', () => {
 
 navigator.geolocation.getCurrentPosition(
     (position) => {
-        let lat = position.coords.latitude;
-        let lon = position.coords.longitude;
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
 
-        getCurrentLocationWeather(lat, lon);
-    },
+        getCurrentLocationWeather(lat, lon)
+    }, 
     (err) => {
-        if(err.code === 1) {
-            alert('Localização negada pelo usuário. Busque manualmente pela barra de pesquisa.');
-        } else{
-            console.log(err);
-        }
+         if (err === 1) {
+              alert('Localização negada pelo usuário. Busque manualmente pela barra de pesquisa.');
+          } else {
+              console.log(err)
+           }
+     },
+
+     {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
     }
 );
 
+
 function getCurrentLocationWeather(lat, lon) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${api_key}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${api_keyWeather}`)
     .then((response) => response.json()) //then = então converte a api em json
     .then((data) => displayWeather(data))
 }
 
 function getCityWeather(cityName) {
     weatherIcon.src = `../assets/imgs/loading-icon.svg`
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&lang=pt_br&appid=${api_key}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&lang=pt_br&appid=${api_keyWeather}`)
         .then((response) => response.json()) 
         .then((data) => displayWeather(data))
 }
